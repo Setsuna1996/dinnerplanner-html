@@ -16,18 +16,33 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row visible-on">
 			
 			<div id="sidebarView" class="col-sm-4 col-md-3 col-lg-2" style="font-size:120%;text-align:left">
-			<h4>My Dinner</h4>
+			<div class="container-fluid">
+				<div class="row visible-on">
+					<div class="col-xs-5 col-sm-12" style="text-align: left;">
+						<span style="font-size: 120%;text-align: left;">My Dinner</span>
+						
+					</div>
+					<div class="col-xs-5 visible-xs">
+						<span style="font-size: 120%">SEK 77.20</span>
+					</div>
+					<div class="col-xs-2 visible-xs" >
+						<button class="btn-lg btn-default"><span class="glyphicon glyphicon-list"></span></button>
+						
+					</div>
+				</div>
+			</div>
+
 			
-			<div>
+			<div class="hidden-xs">
 				People <span id="numberOfGuests"></span>
 				<button id="plusGuest" class="btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
 				<button id="minusGuest" class="btn-xs"><span class="glyphicon glyphicon-minus"></span></button>
 			</div>
 			
-			<table class="table">
+			<table class="table hidden-xs">
 				<thead>
 					<tr>
 						<th>Dish Name</th>
@@ -36,17 +51,18 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Lasagne</td>
-						<td>77.20</td>
+						
 					</tr>
 				</tbody>
 			</table>
 
-			<div style="text-align:right">SEK <span>77.20 </span> </div>
+			<div style="text-align:right" class="hidden-xs">SEK <span>0 </span> </div>
 
-			<div style="text-align:center">
+			<div style="text-align:center" class="hidden-xs">
 				<button id="confirm" class="btn">Confirm Dinner</button>
 			</div>
+
+			<hr style="border: 0;color: black;background-color: black;height: 3px" class="visible-xs">
 			
 			</div>
 			
