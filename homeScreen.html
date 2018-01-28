@@ -11,19 +11,24 @@
 
   </head>
   <body>
+	<div class="container-fluid" style="background-color:#C0C0C0; padding:2%">
+		<h1 style="text-align:center"> Dinner Planner </h1>
+	</div>
+
 	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
+		<div id="welcomeView" style="text-align:center;padding:5%;font-size:150%">
+			<div style="padding:10% 5%">
+				<span id="welcomeText"></span>
 			</div>
-			<div>
-          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+			<div style="padding:5%">
+          		<button id="startButton" class="btn-lg">Create New Dinner</button>
+				
 			</div>
-			
 		</div>
 	</div>
+ 	
+
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -37,6 +42,11 @@
 	<script src="js/view/welcomeView.js"></script>
 	<script src="js/view/sidebarView.js"></script>
 	<script src="js/view/itemView.js"></script>
+	<script src="js/view/searchView.js"></script>
+	<script src="js/view/detailView.js"></script>
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/menuView.js"></script>
+	<script src="js/view/recipeView.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>
