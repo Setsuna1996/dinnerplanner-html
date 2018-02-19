@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+  	<div class="container-fluid" style="background-color:#C0C0C0; padding:2%">
+		<h1 style="text-align:center"> Dinner Planner </h1>
+	</div>
+
+
+  	<div class="container">
+		<div id="welcomeView" style="text-align:center;padding:5%;font-size:150%">
+			
+			<div style="padding:10% 5%">
+				<span id="welcomeText">some words</span>
+			</div>
+		    
+			<div style="padding:5%">
+          		<button id="startButton" class="btn-lg">Create New Dinner</button>
+				
+			</div>
+		    
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row visible-on">
+			
+			<div id="sidebarView" class="col-sm-4 col-md-3 col-lg-2" style="font-size:120%;text-align:left;display: none;">
+			<div class="container-fluid">
+				<div class="row visible-on">
+					<div class="col-xs-5 col-sm-12" style="text-align: left;">
+						<span style="font-size: 120%;text-align: left;">My Dinner</span>
+						
+					</div>
+					<div class="col-xs-5 visible-xs">
+						<span style="font-size: 120%">SEK 77.20</span>
+					</div>
+					<div class="col-xs-2 visible-xs" >
+						<button class="btn-lg btn-default"><span class="glyphicon glyphicon-list"></span></button>
+						
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="hidden-xs">
+				People <span id="numberOfGuests"></span>
+				<button id="plusButton" class="btn-xs"><span id="plus" class="glyphicon glyphicon-plus"></span></button>
+				<button id="minusButton" class="btn-xs"><span id="minus" class="glyphicon glyphicon-minus"></span></button>
+			</div>
+			
+			<table class="table hidden-xs">
+				<thead>
+					<tr>
+						<th>Dish Name</th>
+						<th>Cost</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+					</tr>
+				</tbody>
+			</table>
+
+			<div style="text-align:right" class="hidden-xs">SEK <span>0 </span> </div>
+
+			<div style="text-align:center" class="hidden-xs">
+				<button id="confirmButton" class="btn">Confirm Dinner</button>
+			</div>
+
+			<hr style="border: 0;color: black;background-color: black;height: 3px" class="visible-xs">
+			
+			</div>
+
+			<div class="col-sm-8 col-md-9 col-lg-10" style="font-size:120%;text-align:left">
+			<div id="searchView" style="display: none;">
+
+			<h4>Find a dish</h4>
+			
+			
+			
+			<div style="display:inline">
+				<input id="searchInput" type="text" placeholder="Enter Key Words">
+			</div>
+			
+			<div class="dropdown" style="display:inline">
+			    <button type="button" class="btn dropdown-toggle" id="dropdown1" data-toggle="dropdown">All</button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown1">
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">Main Course</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">Side Dish</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">Dessert</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">Appetizer</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div style="display:inline">
+				<button type="button" class="btn" id="searchButton">Search</button>
+			</div>
+			
+			</div>
+
+			<div id="itemView" class="container-fluid" style="display: none;">
+				<div class="row">
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img1" src="" width="200px" height="200px" />
+						<p><span id="name1"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img2" src="" width="200px" height="200px" />
+						<p><span id="name2"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img3" src="" width="200px" height="200px" />
+						<p><span id="name3"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img4" src="" width="200px" height="200px" />
+						<p><span id="name4"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img5" src="" width="200px" height="200px" />
+						<p><span id="name5"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img6" src="" width="200px" height="200px" />
+						<p><span id="name6"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img7" src="" width="200px" height="200px" />
+						<p><span id="name7"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img8" src="" width="200px" height="200px" />
+						<p><span id="name8"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img9" src="" width="200px" height="200px" />
+						<p><span id="name9"></span></p>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3" style="font-size:120%;text-align:center;">
+						<img id="img10" src="" width="200px" height="200px" />
+						<p><span id="name10"></span></p>
+					</div>
+				
+				</div>
+
+			</div>
+
+
+			<div class="col-sm-8 col-md-9 col-lg-10" style="font-size:120%;">
+
+				<div id="detailView" class="container-fluid" style="display: none;">
+					<div class="row">
+						<div class="col-sm-6" style="font-size:120%;">
+							<h1><span id="dishname">Ice Cream</span></h1>
+							<img id="dishimg" src="images/icecream.jpg" width="80%">
+							<p><span id="description">In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.</span></p>
+							<button id="backButton" class="btn">Back to search</button>
+
+						</div>
+
+						<div class="col-sm-6" style="font-size: 120%">
+							<table class="table">
+							<thead>
+								<tr>
+									<th>Ingredients for <span id="numofpeople"></span> People</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span>2 tbsp</span> </td>
+									<td><span>olive oil</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>0.20</span> </td>
+								</tr>
+								<tr>
+									<td><span>750 g</span> </td>
+									<td><span>lean beaf mince</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>10.00</span> </td>
+								</tr>
+								<tr>
+									<td><span>90 g</span> </td>
+									<td><span>pack rosciutto</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>15.00</span> </td>
+								</tr>
+								<tr>
+									<td><span>2 tbsp</span> </td>
+									<td><span>olive oil</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>0.20</span> </td>
+								</tr>
+								<tr>
+									<td><span>750 g</span> </td>
+									<td><span>lean beaf mince</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>10.00</span> </td>
+								</tr>
+								<tr>
+									<td><span>90 g</span> </td>
+									<td><span>pack rosciutto</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>15.00</span> </td>
+								</tr>
+								<tr>
+									<td><span>2 tbsp</span> </td>
+									<td><span>olive oil</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>0.20</span> </td>
+								</tr>
+								<tr>
+									<td><span>750 g</span> </td>
+									<td><span>lean beaf mince</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>10.00</span> </td>
+								</tr>
+								<tr>
+									<td><span>90 g</span> </td>
+									<td><span>pack rosciutto</span> </td>
+									<td><span>SEK</span> </td>
+									<td><span>15.00</span> </td>
+								</tr>
+							</tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+			<div id="overView" class="container-fluid" style="display: none;">
+				<div class="row">
+					<div class="col-sm-6" style="font-size:120%;text-align:left">
+						<h2>My Dinner: <span id="numofpeople"></span> People</h2>
+					</div>
+
+					<div class="col-sm-6" style="font-size:120%;text-align:right;">
+						<button id="gobackButton" class="btn-md" style="margin-top:2%">Go back and edit dinner</button>
+					</div>
+			
+				</div>
+		
+				<hr style="border: 0;color: black;background-color: black;height: 5px">
+
+			</div>
+
+			<div class="container-fluid" style="font-size: 120%;display: none;" id="menuView">
+				<div class="row">
+					<div class="col-sm-6 col-md-3 col-lg-3">
+						<img id="dish1" src="images/toast.jpg" width="60%" align="middle">
+						<p><span id="name1">French Toast</span></p>
+						<p><span id="price1">77.20</span> SEK</p>
+					</div>
+					
+					<div class="col-sm-6 col-md-3 col-lg-3">
+						<img id="dish2" src="images/meatballs.jpg" width="60%" align="middle">
+						<p><span id="name2">Meat Balls</span></p>
+						<p><span id="price2">180.60</span> SEK</p>
+					</div>
+					
+					<div class="col-sm-6 col-md-3 col-lg-3">
+						<img id="dish3" src="images/icecream.jpg" width="60%" align="middle">
+						<p><span id="name3">Ice Cream</span></p>
+						<p><span id="price3">83.40</span> SEK</p>
+					</div>
+			
+					<div class="col-sm-6 col-md-3 col-lg-3">
+						<h3>Total:</h3>
+						<p><span id="totalprice">341.20</span> SEK</p>
+					</div>
+			
+				</div>
+		
+				<hr style="border: 0;color: black;background-color: black;height: 5px">
+
+				<div style="text-align: center">
+					<button id="recipeButton" class="btn-lg">Print Full Recipe</button>
+				</div>
+
+ 			</div>
+
+ 			<div id="recipeView" style="display: none;">
+				<div class="container-fluid" style="font-size: 120%">
+					<div class="row">
+						<div class="col-sm-3">
+							<img src="images/toast.jpg" id="img1" width="80%">
+						</div>
+						
+						<div class="col-sm-3">
+							<h2><span id="name1">French Toast</span></h2>
+							<p><span id="description1">In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.</span></p>
+						</div>
+							
+						<div class="col-sm-6">
+							<h2>Preparation</h2>
+							<p><span id="preparation1">In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.
+							In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.</span></p>
+						</div>
+				
+					</div>
+				</div>
+
+				<hr>
+
+				<div class="container-fluid" style="font-size: 120%">
+					<div class="row">
+						<div class="col-sm-3">
+							<img src="images/meatballs.jpg" id="img2" width="80%">
+						</div>
+						
+						<div class="col-sm-3">
+							<h2><span id="name2">Meat Balls</span></h2>
+							<p><span id="description2">Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.</span></p>
+						</div>
+							
+						<div class="col-sm-6">
+							<h2>Preparation</h2>
+							<p><span id="preparation2">Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.</span></p>
+					
+						</div>
+				
+					</div>
+			
+				</div>
+		
+			</div>
+
+
+
+			
+
+		</div>
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/welcomeView.js"></script>
+	<script src="js/view/sidebarView.js"></script>
+	<script src="js/view/itemView.js"></script>
+	<script src="js/view/searchView.js"></script>
+	<script src="js/view/detailView.js"></script>
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/menuView.js"></script>
+	<script src="js/view/recipeView.js"></script>
+	
+	<!-- TODO: Here you should include JS code for your other views -->
+  </body>
+</html>
